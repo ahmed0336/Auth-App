@@ -80,7 +80,7 @@ const Header = () => {
             <Link className="nav-link" to="/service">Service</Link>
             <Link className="nav-link" to="/friends">Friends</Link>
             <Link className="nav-link" to="/colorpicker">ColorPicker</Link>
-            <Link className="nav-link" to="/materialtable">MaterialTable Work</Link>
+            <Link className="nav-link" to="/materialtable">Animination</Link>
           </Nav>
           <Link to="/signup">
             <Button variant="success"  className={headercss.signupbtn} >
