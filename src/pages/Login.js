@@ -290,7 +290,7 @@ const Login = () => {
                     >
                         <form onSubmit={handleSubmit(onSubmit)} >
                             <Typography variant="h2" component="h2">
-                                Login Form
+                                Login Form master wala
                             </Typography>
                             <TextField fullWidth label="Email" id="email" name="email" type="email" margin="dense" autoComplete="off"
                                 {...register('email', {
