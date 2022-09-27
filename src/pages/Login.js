@@ -356,7 +356,7 @@ const Login = () => {
                                 <BtnFacebook onClick={facebookfun} >
                                     &nbsp;&nbsp;Sign  with Facebook
                                 </BtnFacebook >
-                                <BtnGoogle>
+                                <BtnGoogle   >
                                     &nbsp;&nbsp;Sign In with Google
                                 </BtnGoogle >
                             </Wrapper>
