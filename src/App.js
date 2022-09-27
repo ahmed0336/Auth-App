@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-overlay-loader/styles.css';
 import { lazy,Suspense } from 'react';
 import { Helmet } from 'react-helmet';
-import GoogleLogin from './pages/GoogleLogin';
+// import GoogleLogin from './pages/GoogleLogin';
 // import MaterialTable from './pages/MTable';
 
 
@@ -64,7 +64,7 @@ function App() {
           <Route  path="/newpassword" element={<Newpassword />} />
           <Route  path="/colorpicker" element={<Colorpicker />} />
           <Route  path="/materialtable" element={<MTable />} />
-          <Route  path="/googlelogin" element={<GoogleLogin />} />
+          {/* <Route  path="/googlelogin" element={<GoogleLogin />} /> */}
         </Routes>
       </Router>
       

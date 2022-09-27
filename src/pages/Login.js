@@ -1,6 +1,9 @@
 import { Grid } from '@mui/material'
 // import { React, useState } from 'react'
-import React, { Component, useState } from 'react'
+// import React, { useState, useEffect } from 'react';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { gapi } from 'gapi-script';
+import React, { Component, useState,useEffect } from 'react'
 import styled from 'styled-components';
 import Swal from 'sweetalert2'
 import Stack from '@mui/material/Stack';
@@ -12,6 +15,8 @@ import { useForm } from 'react-hook-form';
 import { getAuth, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 
 import Firebase from '../Firebase'
+
+import { Google } from '../Components/Google';
 
 import { Loader } from 'react-overlay-loader';
 
@@ -31,6 +36,7 @@ import MUIDataTable from "mui-datatables";
 import Typography from '@mui/material/Typography';
 import SendIcon from '@mui/icons-material/Send';
 import { border } from '@mui/system';
+import Facebook from '../Components/Facebook';
 
 
 
@@ -118,8 +124,8 @@ const Login = () => {
 
     const Navigate = useNavigate()
 
-    
-// d.getHours();
+
+    // d.getHours();
 
     const facebookfun = () => {
 
@@ -145,8 +151,8 @@ const Login = () => {
                 // setInterval(myTimer, 1000);
 
                 // function myTimer() {
-                    // let dtime = new Date();
-                    // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+                // let dtime = new Date();
+                // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
                 // }
                 console.log("Token is===>", user)
                 console.log("expire token===>", user.stsTokenManager)
@@ -256,6 +262,7 @@ const Login = () => {
 
     }
 
+
     return (
 
         <div>
@@ -285,12 +292,10 @@ const Login = () => {
                             // margin: "dense"
                         }}
 
-
-
                     >
                         <form onSubmit={handleSubmit(onSubmit)} >
                             <Typography variant="h2" component="h2">
-                                Login Form master wala
+                                Login Form
                             </Typography>
                             <TextField fullWidth label="Email" id="email" name="email" type="email" margin="dense" autoComplete="off"
                                 {...register('email', {
@@ -351,16 +356,37 @@ const Login = () => {
 
                         </form>
 
-                        <div style={{ display: 'flex', flexWrap: 'wrap' }} >
+
+
+                        {/* <div style={{ display: 'flex', flexWrap: 'wrap' }} >
                             <Wrapper>
                                 <BtnFacebook onClick={facebookfun} >
                                     &nbsp;&nbsp;Sign  with Facebook
                                 </BtnFacebook >
+                                <Facebook />
                                 <BtnGoogle   >
                                     &nbsp;&nbsp;Sign In with Google
                                 </BtnGoogle >
+                                <Google />
                             </Wrapper>
+                        </div> */}
+                        <div className='conatiner' >
+                            <div className='row' >
+                                <div className='col-md-6'>
+                                <Facebook />
+                                </div>
+
+                                <div className='col-md-6 mt-3'>
+                                <Google />
+                                </div>
+
+                            </div>
+
                         </div>
+                        {/* <Facebook /> */}
+                        {/* <Google /> */}
+
+                        
 
                     </Box>
 
@@ -373,6 +399,8 @@ const Login = () => {
                 </Grid>
 
             </Grid>
+            {/* <Google /> */}
+            {/* <Facebook /> */}
         </div>
 
     )
